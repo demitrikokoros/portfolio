@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Projects - Demitri Kokoros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a34;
+            --secondary-color: #f5f5f5;
+            --text-color: #333;
+            --accent-color: #122722;
+            --shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto Mono', monospace;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            font-weight: 300;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        nav {
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        nav ul li {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.75rem 0;
+        }
+        
+        nav ul li:not(:last-child)::after {
+            content: '|';
+            position: absolute;
+            right: 0;
+            color: #ccc;
+        }
+        
+        nav ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        /* Fixed width container for text to ensure consistent spacing */
+        nav ul li a span {
+            display: inline-block;
+            text-align: center;
+            padding: 0 12px;
+        }
+        
+        nav ul li a:hover {
+            color: #444;
+        }
+        
+        section {
+            padding: 3rem 0;
+            min-height: 70vh;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #444;
+            margin: 0.5rem auto;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+        
+        .empty-state p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Featured Projects</h1>
+            <p>Demitri Kokoros | Mechanical Engineer | Product Designer</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html"><span>Home</span></a></li>
+            <li><a href="index.html#about"><span>About</span></a></li>
+            <li><a href="index.html#projects"><span>Projects</span></a></li>
+            <li><a href="index.html#experience"><span>Experience</span></a></li>
+            <li><a href="index.html#contact"><span>Contact</span></a></li>
+        </ul>
+    </nav>
+    
+    <!-- Featured Projects Section -->
+    <section style="background-color: #e8f0ed;">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="empty-state">
+                <p>This page is currently under construction.</p>
+                <p>Check back soon for updates on featured projects!</p>
+                <a href="index.html" class="btn">Return to Homepage</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Last Updated March 2025</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
