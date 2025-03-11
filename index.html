@@ -69,24 +69,9 @@
             padding: 0.75rem 0;
         }
         
-        /* Clear any existing dividers first */
+        /* Clear any existing dividers */
         nav ul li::after {
             content: none;
-        }
-        
-        /* Apply dividers to specific list items */
-        nav ul li:nth-child(1)::after,
-        nav ul li:nth-child(2)::after,
-        nav ul li:nth-child(3)::after {
-            content: '|';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #ccc;
-            z-index: 2;
-            height: 20px;
-            line-height: 20px;
         }
         
         nav ul li a {
@@ -417,13 +402,16 @@
     <nav>
         <ul>
             <li><a href="#about"><span>About</span></a></li>
+            <li class="divider">|</li>
             <li class="dropdown">
                 <a href="#projects"><span>Projects</span></a>
                 <div class="dropdown-content">
-                    <a href="featured-projects.html">Featured Projects</a>
+                    <a href="featured-projects">Featured Projects</a>
                 </div>
             </li>
+            <li class="divider">|</li>
             <li><a href="#experience"><span>Experience</span></a></li>
+            <li class="divider">|</li>
             <li><a href="#contact"><span>Contact</span></a></li>
         </ul>
     </nav>
