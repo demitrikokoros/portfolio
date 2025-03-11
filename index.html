@@ -73,8 +73,12 @@
             content: '|';
             position: absolute;
             right: 0;
+            top: 50%;
+            transform: translateY(-50%);
             color: #ccc;
             z-index: 2;
+            height: 20px; /* Limit the height of the divider */
+            line-height: 20px;
         }
         
         nav ul li a {
@@ -138,6 +142,8 @@
             width: 100%;
             bottom: -10px;
             left: 0;
+            background-color: transparent;
+            z-index: 3;
         }
         
         section {
@@ -395,7 +401,7 @@
     <header id="home">
         <div class="container">
             <h1>Demitri Kokoros</h1>
-            <p>Mechanical Engineering | Product Development</p>
+            <p>Mechanical Engineer | Product Designer</p>
         </div>
     </header>
     
@@ -406,7 +412,7 @@
             <li class="dropdown">
                 <a href="#projects"><span>Projects</span></a>
                 <div class="dropdown-content">
-                    <a href="featured-projects">Featured Projects</a>
+                    <a href="featured-projects.html">Featured Projects</a>
                 </div>
             </li>
             <li><a href="#experience"><span>Experience</span></a></li>
