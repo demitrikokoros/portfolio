@@ -108,7 +108,8 @@
             background-color: white;
             box-shadow: var(--shadow);
             z-index: 1;
-            margin-top: 5px;
+            margin-top: 0;
+            padding-top: 5px;
         }
         
         .dropdown-content a {
@@ -126,6 +127,16 @@
         
         .dropdown:hover .dropdown-content {
             display: block;
+        }
+        
+        /* Add invisible padding to create space between nav item and dropdown */
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            height: 10px;
+            width: 100%;
+            bottom: -10px;
+            left: 0;
         }
         
         section {
@@ -383,7 +394,7 @@
     <header id="home">
         <div class="container">
             <h1>Demitri Kokoros</h1>
-            <p>Mechanical Engineering | Product Development</p>
+            <p>Mechanical Engineer | Product Designer</p>
         </div>
     </header>
     
