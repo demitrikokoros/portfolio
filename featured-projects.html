@@ -42,58 +42,6 @@
             padding: 1rem;
         }
         
-        nav {
-            background-color: #fff;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 0.5rem 0;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        nav ul li {
-            flex: 1;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0.75rem 0;
-        }
-        
-        nav ul li:not(:last-child)::after {
-            content: '|';
-            position: absolute;
-            right: 0;
-            color: #ccc;
-        }
-        
-        nav ul li a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        /* Fixed width container for text to ensure consistent spacing */
-        nav ul li a span {
-            display: inline-block;
-            text-align: center;
-            padding: 0 12px;
-        }
-        
-        nav ul li a:hover {
-            color: #444;
-        }
-        
         section {
             padding: 3rem 0;
             min-height: 70vh;
@@ -166,25 +114,13 @@
     <header>
         <div class="container">
             <h1>Featured Projects</h1>
-            <p>Demitri Kokoros | Mechanical Engineer | Product Designer</p>
         </div>
     </header>
-    
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html"><span>Home</span></a></li>
-            <li><a href="index.html#about"><span>About</span></a></li>
-            <li><a href="index.html#projects"><span>Projects</span></a></li>
-            <li><a href="index.html#experience"><span>Experience</span></a></li>
-            <li><a href="index.html#contact"><span>Contact</span></a></li>
-        </ul>
-    </nav>
     
     <!-- Featured Projects Section -->
     <section style="background-color: #e8f0ed;">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Project Details</h2>
             
             <div class="empty-state">
                 <p>This page is currently under construction.</p>
