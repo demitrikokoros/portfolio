@@ -211,6 +211,62 @@
             background-color: white;
         }
         
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        .carousel-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .carousel-img.active {
+            opacity: 1;
+        }
+        
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(30, 58, 52, 0.3);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .carousel-arrow:hover {
+            background-color: rgba(30, 58, 52, 0.6);
+        }
+        
+        .carousel-arrow-left {
+            left: 10px;
+        }
+        
+        .carousel-arrow-right {
+            right: 10px;
+        }
+        
         .project-info {
             padding: 1.5rem;
         }
@@ -446,9 +502,16 @@
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
+                <!-- Project 2 - FutureScape with Carousel -->
                 <div class="project-card">
-                    <img src="/api/placeholder/600/400" alt="Project 2" class="project-img">
+                    <div class="carousel-container">
+                        <img src="images/Dispenser-1.jpg" alt="FutureScape Project - Dispenser 1" class="carousel-img active">
+                        <img src="images/Dispenser-2.jpg" alt="FutureScape Project - Dispenser 2" class="carousel-img">
+                        <img src="images/Light-Switch.jpg" alt="FutureScape Project - Light Switch" class="carousel-img">
+                        <img src="images/Runoff-Monitor.jpg" alt="FutureScape Project - Runoff Monitor" class="carousel-img">
+                        <button class="carousel-arrow carousel-arrow-left" onclick="changeSlide(this, -1)" aria-label="Previous image">‹</button>
+                        <button class="carousel-arrow carousel-arrow-right" onclick="changeSlide(this, 1)" aria-label="Next image">›</button>
+                    </div>
                     <div class="project-info">
                         <h3 class="project-title">FutureScape Engineering</h3>
                         <p class="project-subtitle">2020 - 2024</p>
@@ -574,6 +637,52 @@
                 behavior: 'smooth'
                 });
             });
+        });
+
+        // Carousel functionality
+        function changeSlide(button, direction) {
+            const carouselContainer = button.closest('.carousel-container');
+            const images = carouselContainer.querySelectorAll('.carousel-img');
+            let currentIndex = 0;
+            
+            // Find current active image
+            images.forEach((img, index) => {
+                if (img.classList.contains('active')) {
+                    currentIndex = index;
+                }
+            });
+            
+            // Remove active class from current image
+            images[currentIndex].classList.remove('active');
+            
+            // Calculate new index
+            let newIndex = currentIndex + direction;
+            
+            // Wrap around if needed
+            if (newIndex < 0) {
+                newIndex = images.length - 1;
+            } else if (newIndex >= images.length) {
+                newIndex = 0;
+            }
+            
+            // Add active class to new image
+            images[newIndex].classList.add('active');
+        }
+
+        // Optional: Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const carousels = document.querySelectorAll('.carousel-container');
+            if (e.key === 'ArrowLeft') {
+                carousels.forEach(carousel => {
+                    const leftButton = carousel.querySelector('.carousel-arrow-left');
+                    if (leftButton) changeSlide(leftButton, -1);
+                });
+            } else if (e.key === 'ArrowRight') {
+                carousels.forEach(carousel => {
+                    const rightButton = carousel.querySelector('.carousel-arrow-right');
+                    if (rightButton) changeSlide(rightButton, 1);
+                });
+            }
         });
     </script>
 </body>
